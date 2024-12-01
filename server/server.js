@@ -26,6 +26,11 @@ app.get("/",(req,res)=>{
     res.send("Hello DK! ")
 })
 
+const user = true
+io.use((socket,next)=>{
+    if(user) next()
+})
+
 io.on("connection",(socket)=>{
     console.log("User Connected ");
     console.log("ID", socket.id);
@@ -41,6 +46,8 @@ io.on("connection",(socket)=>{
     })
         socket.on("join-room", (roomName)=>{
             socket.join(roomName)
+            console.log(`User joined room ${roomName}`);
+            
         } )
 
     socket.on("disconnect",()=>{

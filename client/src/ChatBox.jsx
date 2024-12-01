@@ -19,8 +19,9 @@ export default function ChatBox({ socket }) {
         e.preventDefault()
         socket.emit("message", { roomId, message })
         setMessage("")
-        setRoomId("")
+        // setRoomId("")
     }
+
     const handleRoom = (e) => {
         e.preventDefault()
         socket.emit("join-room", roomName )
@@ -37,10 +38,9 @@ export default function ChatBox({ socket }) {
                 {messages.map((msg, idx) => (
                     <div className="rytMsg" key={idx}>{msg} </div>
                 ))}
-
             </div>
 
-            <form onSnSubmit={handleRoom} className="w-full h-auto bg-gray-900 flex items-end px-3 py-2">
+            <form onSubmit={handleRoom} className="w-full h-auto bg-gray-900 flex items-end px-3 py-2">
                 {/* Rooms  */}
                 <textarea
                     ref={textareaRef}
