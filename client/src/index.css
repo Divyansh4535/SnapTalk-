@@ -33,3 +33,27 @@
 
 
 
+/* Tailwind Scrollbar Styles */
+.scrollbar {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #d1d5db transparent; /* Thumb and Track */
+}
+
+/* For Chrome, Edge, and Safari */
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; /* Optional, if horizontal scroll is present */
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #d1d5db; /* Gray scrollbar thumb */
+  border-radius: 4px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af; /* Slightly darker gray on hover */
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track */
+}
